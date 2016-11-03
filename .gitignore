@@ -1,0 +1,3 @@
+build/*
+dist/*
+pyresas.egg-info/*
