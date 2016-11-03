@@ -19,84 +19,54 @@ class RESASAPI() :
     return self.request('api/v1-rc.1/prefectures')
 
   def getCities(self, prefCode) :
-    if type(prefCode) == list :
-      prefCode = ','.join(str(prefCode))
-    else :
-      prefCode = str(prefCode)
     return self.request('api/v1-rc.1/cities', {'prefCode':prefCode})
 
   def getOldCities(self, prefCode, cityCode) :
-    if type(prefCode) == list :
-      prefCode = ','.join(prefCode)
-    if type(cityCode) == list :
-      cityCode = ','.join(cityCode)
     return self.request('api/v1-rc.1/oldCities', {'prefCode':prefCode, 'cityCode':cityCode})
 
   def getIndustriesBroad(self) :
     return self.request('api/v1-rc.1/industries/broad')
 
   def getIndustriesMiddle(self, sicCode) :
-    if type(sicCode) == list :
-      sicCode = ','.join(sicCode)
     return self.request('api/v1-rc.1/industries/middle', {'sicCode':sicCode})
 
   def getIndustriesNarrow(self, simcCode) :
-    if type(simcCode) == list :
-      simcCode = ','.join(simcCode)
     return self.request('api/v1-rc.1/industries/narrow', {'simcCode':simcCode})
 
   def getJobsBroad(self) :
     return self.request('api/v1-rc.1/jobs/broad')
 
   def getJobsMiddle(self, iscoCode) :
-    if type(iscoCode) == list :
-      iscoCode = ','.join(iscoCode)
     return self.request('api/v1-rc.1/jobs/middle', {'iscoCode':iscoCode})
 
   def getPatentsBroad(self) :
     return self.request('api/v1-rc.1/patents/broad')
 
   def getPatentsMiddle(self, tecCode) :
-    if type(tecCode) == list :
-      tecCode = ','.join(tecCode)
     return self.request('api/v1-rc.1/patents/middle', {'tecCode':tecCode})
 
   def getCustoms(self, prefCode) :
-    if type(prefCode) == list :
-      prefCode= ','.join(prefCode)
     return self.request('api/v1-rc.1/customs', {'prefCode':prefCode})
 
   def getRegionsBroad(self) :
     return self.request('api/v1-rc.1/regions/broad')
 
   def getRegionsMiddle(self, regionCode) :
-    if type(regionCode) == list :
-      regionCode = ','.join(regionCode)
     return self.request('api/v1-rc.1/regions/middle', {'regionCode':regionCode})
 
   def getRegionsAgricultureDepartments(self) :
     return self.request('api/v1-rc.1/regions/agricultureDepartments')
 
   def getPatentsLocations(self, prefCode, cityCode) :
-    if type(prefCode) == list :
-      prefCode = ','.join(prefCode)
-    if type(cityCode) == list :
-      cityCode = ','.join(cityCode)
     return self.request('api/v1-rc.1/patents/locations', {'prefCode':prefCode, 'cityCode':cityCode})
 
   def getTradeInfoItemTypesBroad(self) :
     return self.request('api/v1-rc.1/tradeInfoItemTypes/broad')
 
   def getTradeInfoItemTypesMiddle(self, itemCode1) :
-    if type(itemCode1) == list :
-      itemCode1 = ','.join(itemCode1)
     return self.request('api/v1-rc.1/tradeInfoItemTypes/middle', {'itemCode1':itemCode1})
 
   def getTradeInfoItemTypesNarrow(self, itemCode1, itemCode2) :
-    if type(itemCode1) == list :
-      itemCode1 = ','.join(itemCode1)
-    if type(itemCode2) == list :
-      itemCode2 = ','.join(itemCode2)
     return self.request('api/v1-rc.1/tradeInfoItemTypes/narrow', {'itemCode1':itemCode1, 'itemCode2':itemCode2})
 
   def request(self, path, params = None) :
