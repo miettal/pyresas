@@ -12,8 +12,8 @@ pip install pyresas
 
 ## コード例
 ```python
-import pyresas
 from pyresas.resas import RESASAPI
+
 api_key = 'please fill in your api key'
 resas_api = RESASAPI(api_key)
 resas_api.getPrefectures()
